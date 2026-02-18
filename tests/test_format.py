@@ -649,6 +649,12 @@ def test_is_valid__with_scope(conventional_commit):
     assert conventional_commit.is_valid(input)
 
 
+def test_is_valid__with_scope_and_hash(conventional_commit):
+    input = "feat(#scope): message"
+
+    assert conventional_commit.is_valid(input)
+
+
 def test_is_valid__body_multiline_body_bad_type(conventional_commit):
     input = """wrong: message
 
